@@ -8,6 +8,7 @@ import java.util.HashMap;
 
 public abstract class Competitor {
     private Country country;
+
     private int score;
     private HashMap medal;
 
@@ -32,6 +33,8 @@ public abstract class Competitor {
         return medal;
     }
 
-
+    public void setScore(int score) {
+        this.score = score;
+    }
 
 }
