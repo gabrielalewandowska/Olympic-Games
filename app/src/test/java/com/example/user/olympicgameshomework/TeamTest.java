@@ -37,7 +37,9 @@ public class TeamTest {
     }
 
     @Test
-    public void canGetMedal(){
-        assertEquals(Medal.NONE, team.getMedal());
+    public void startsWith0Medals(){
+        assertEquals(0, team.getMedal().get("gold"));
+        assertEquals(0, team.getMedal().get("silver"));
+        assertEquals(0, team.getMedal().get("bronze"));
     }
 }

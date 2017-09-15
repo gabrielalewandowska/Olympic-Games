@@ -7,18 +7,18 @@ import java.util.ArrayList;
  */
 
 public class Event<T> {
-    EventType eventType;
+    Sport sportType;
     int numberOfCompetitors;
     ArrayList<T> competitors;
 
-    public Event(EventType eventType, int numberOfCompetitors) {
-        this.eventType = eventType;
+    public Event(Sport sportType, int numberOfCompetitors) {
+        this.sportType = sportType;
         this.numberOfCompetitors = numberOfCompetitors;
         this.competitors = new ArrayList<>();
     }
 
-    public EventType getEventType() {
-        return eventType;
+    public Sport getEventType() {
+        return sportType;
     }
 
     public int getNumberOfCompetitors() {

@@ -1,5 +1,7 @@
 package com.example.user.olympicgameshomework;
 
+import java.util.HashMap;
+
 /**
  * Created by user on 15/09/2017.
  */
@@ -7,12 +9,15 @@ package com.example.user.olympicgameshomework;
 public abstract class Competitor {
     private Country country;
     private int score;
-    private Medal medal;
+    private HashMap medal;
 
     public Competitor(Country country) {
         this.country = country;
         this.score = 0;
-        this.medal = Medal.NONE;
+        this.medal = new HashMap();
+        this.medal.put("gold", 0);
+        this.medal.put("silver", 0);
+        this.medal.put("bronze", 0);
     }
 
     public Country getCountry() {
@@ -23,7 +28,7 @@ public abstract class Competitor {
         return score;
     }
 
-    public Medal getMedal() {
+    public HashMap getMedal() {
         return medal;
     }
 

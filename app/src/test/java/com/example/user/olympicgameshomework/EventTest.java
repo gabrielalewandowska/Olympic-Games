@@ -12,6 +12,6 @@ public class EventTest {
 
     @Before
     public void before(){
-        teamEvent = new Event<Team>(EventType.subType)
+        teamEvent = new Event<Team>(Sport.FIGURESKATING, 2);
     }
 }
