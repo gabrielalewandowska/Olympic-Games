@@ -6,14 +6,14 @@ import java.util.ArrayList;
  * Created by user on 15/09/2017.
  */
 
-public class Event<T> {
+public class Event {
     Sport sportType;
-    int numberOfCompetitors;
-    ArrayList<T> competitors;
+    int maximumNumberOfCompetitors;
+    ArrayList<Competitor> competitors;
 
-    public Event(Sport sportType, int numberOfCompetitors) {
+    public Event(Sport sportType, int maximumNumberOfCompetitors) {
         this.sportType = sportType;
-        this.numberOfCompetitors = numberOfCompetitors;
+        this.maximumNumberOfCompetitors = maximumNumberOfCompetitors;
         this.competitors = new ArrayList<>();
     }
 
@@ -21,15 +21,15 @@ public class Event<T> {
         return sportType;
     }
 
-    public int getNumberOfCompetitors() {
-        return numberOfCompetitors;
+    public int getMaximumNumberOfCompetitors() {
+        return maximumNumberOfCompetitors;
     }
 
-    public ArrayList<T> getCompetitors() {
+    public ArrayList<Competitor> getCompetitors() {
         return competitors;
     }
 
-    public void addCompetitors(T competitor){
+    public void addCompetitors(Competitor competitor){
         this.competitors.add(competitor);
     }
 
