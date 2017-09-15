@@ -5,7 +5,7 @@ package com.example.user.olympicgameshomework;
  */
 
 public class Athlete extends Competitor {
-    String name;
+    private String name;
 
 
     public Athlete(String name, Country country) {

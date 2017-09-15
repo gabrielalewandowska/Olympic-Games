@@ -5,9 +5,9 @@ package com.example.user.olympicgameshomework;
  */
 
 public abstract class Competitor {
-    Country country;
-    int score;
-    Medal medal;
+    private Country country;
+    private int score;
+    private Medal medal;
 
     public Competitor(Country country) {
         this.country = country;
