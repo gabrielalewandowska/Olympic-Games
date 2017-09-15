@@ -7,8 +7,13 @@ package com.example.user.olympicgameshomework;
 public class Athlete extends Competitor {
     String name;
 
-    public Athlete(String name, Country country, int score, Medal medal) {
-        super(country, score, medal);
+
+    public Athlete(String name, Country country) {
+        super(country);
         this.name = name;
+    }
+
+    public String getName() {
+        return name;
     }
 }

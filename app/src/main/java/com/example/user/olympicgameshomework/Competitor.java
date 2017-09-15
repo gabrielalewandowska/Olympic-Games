@@ -9,10 +9,10 @@ public abstract class Competitor {
     int score;
     Medal medal;
 
-    public Competitor(Country country, int score, Medal medal) {
+    public Competitor(Country country) {
         this.country = country;
-        this.score = score;
-        this.medal = medal;
+        this.score = 0;
+        this.medal = Medal.NONE;
     }
 
     public Country getCountry() {
