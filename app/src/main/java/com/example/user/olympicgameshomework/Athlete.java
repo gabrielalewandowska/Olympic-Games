@@ -19,14 +19,4 @@ public class Athlete extends Competitor {
         return name;
     }
 
-    @Override
-    public int compareTo(Competitor otherCompetitor){
-        if(this.getScore() == otherCompetitor.getScore()){
-            return 0;
-        } else {
-            return getScore() > otherCompetitor.getScore()? 1 : -1;
-        }
-    }
-
-
 }
