@@ -12,13 +12,13 @@ public class Event {
     Sport sportType;
     int maximumNumberOfCompetitors;
     ArrayList<Competitor> competitors;
-    ArrayList<Competitor> orderedCompetitors;
+    ArrayList<Competitor> rankedCompetitors;
 
     public Event(Sport sportType, int maximumNumberOfCompetitors) {
         this.sportType = sportType;
         this.maximumNumberOfCompetitors = maximumNumberOfCompetitors;
         this.competitors = new ArrayList<>();
-        orderedCompetitors = new ArrayList<>();
+        rankedCompetitors = new ArrayList<>();
     }
 
     public Sport getEventType() {
@@ -31,6 +31,10 @@ public class Event {
 
     public ArrayList<Competitor> getCompetitors() {
         return competitors;
+    }
+
+    public ArrayList<Competitor> getRankedCompetitors() {
+        return rankedCompetitors;
     }
 
     public void addCompetitor(Competitor competitor){
@@ -47,9 +51,16 @@ public class Event {
         }
     }
 
+    public void rankCompetitors(){
+        rankedCompetitors = competitors;
+        Collections.sort(rankedCompetitors);
+        Collections.reverse(rankedCompetitors);
+    }
+
     public void awardMedals(){
-        Collections.sort(competitors);
-        Collections.reverse(competitors);
+        rankedCompetitors.get(0).awardMedal(MedalType.GOLD);
+        rankedCompetitors.get(1).awardMedal(MedalType.SILVER);
+        rankedCompetitors.get(2).awardMedal(MedalType.BRONZE);
     }
 
 

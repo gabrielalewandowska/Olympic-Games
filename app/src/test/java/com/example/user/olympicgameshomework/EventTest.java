@@ -66,7 +66,7 @@ public class EventTest {
         assertEquals(team1, teamEvent.getCompetitors().get(0));
         assertEquals(team2, teamEvent.getCompetitors().get(1));
     }
-//
+
 //    @Test
 //    public void canAssignScoreToCompetitor(){
 //        athleteEvent.addCompetitor(athlete1);
@@ -74,11 +74,35 @@ public class EventTest {
 //        athleteEvent.addCompetitor(athlete3);
 //        athleteEvent.assignScoreToCompetitors();
 //
+//
 //        assertEquals(1 , athlete1.getScore());
 //        assertEquals(2 , athlete2.getScore());
 //        assertEquals(3 , athlete3.getScore());
 //
 //    }
+
+//    @Test
+//    public void canRankCompetitors(){
+//        athleteEvent.addCompetitor(athlete1);
+//        athleteEvent.addCompetitor(athlete2);
+//        athleteEvent.addCompetitor(athlete3);
+//        athleteEvent.assignScoreToCompetitors();
+//        athleteEvent.rankCompetitors();
+//        assertEquals(1, athleteEvent.rankedCompetitors);
+//    }
+
+        @Test
+        public void canAwardMedals(){
+            athleteEvent.addCompetitor(athlete1);
+            athleteEvent.addCompetitor(athlete2);
+            athleteEvent.addCompetitor(athlete3);
+            athleteEvent.assignScoreToCompetitors();
+            athleteEvent.rankCompetitors();
+            athleteEvent.awardMedals();
+            assertEquals(1,athleteEvent.getRankedCompetitors().get(0).getMedal().get(MedalType.GOLD));
+            assertEquals(1,athleteEvent.getRankedCompetitors().get(1).getMedal().get(MedalType.SILVER));
+            assertEquals(1,athleteEvent.getRankedCompetitors().get(2).getMedal().get(MedalType.BRONZE));
+        }
 
 
 }
