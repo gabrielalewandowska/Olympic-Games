@@ -1,6 +1,7 @@
 package com.example.user.olympicgameshomework;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Random;
 
 /**
@@ -11,11 +12,13 @@ public class Event {
     Sport sportType;
     int maximumNumberOfCompetitors;
     ArrayList<Competitor> competitors;
+    ArrayList<Competitor> orderedCompetitors;
 
     public Event(Sport sportType, int maximumNumberOfCompetitors) {
         this.sportType = sportType;
         this.maximumNumberOfCompetitors = maximumNumberOfCompetitors;
         this.competitors = new ArrayList<>();
+        orderedCompetitors = new ArrayList<>();
     }
 
     public Sport getEventType() {
@@ -38,13 +41,17 @@ public class Event {
 
 
     public void assignScoreToCompetitors(){
-        NumberGenerator randomNumber = new NumberGenerator();
-        int random = randomNumber.generateRandomNumber();
-
+        Random random = new Random();
         for(int i = 0; i < this.competitors.size(); i++){
-            this.competitors.get(i).setScore(random);
+            this.competitors.get(i).setScore(random.nextInt(100));
         }
     }
+
+    public void awardMedals(){
+        Collections.sort(competitors);
+        Collections.reverse(competitors);
+    }
+
 
 
 }

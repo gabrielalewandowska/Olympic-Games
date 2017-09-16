@@ -38,8 +38,33 @@ public class TeamTest {
 
     @Test
     public void startsWith0Medals(){
-        assertEquals(0, team.getMedal().get("gold"));
-        assertEquals(0, team.getMedal().get("silver"));
-        assertEquals(0, team.getMedal().get("bronze"));
+        assertEquals(0, team.getMedal().get(MedalType.GOLD));
+        assertEquals(0, team.getMedal().get(MedalType.SILVER));
+        assertEquals(0, team.getMedal().get(MedalType.BRONZE));
+    }
+
+    @Test
+    public void canAwardMedalGold(){
+        team.awardMedal(MedalType.GOLD);
+        assertEquals(1, team.getMedal().get(MedalType.GOLD));
+        assertEquals(0, team.getMedal().get(MedalType.SILVER));
+        assertEquals(0, team.getMedal().get(MedalType.BRONZE));
+
+    }
+
+    @Test
+    public void canAwardMedalSilver(){
+        team.awardMedal(MedalType.SILVER);
+        assertEquals(0, team.getMedal().get(MedalType.GOLD));
+        assertEquals(1, team.getMedal().get(MedalType.SILVER));
+        assertEquals(0, team.getMedal().get(MedalType.BRONZE));
+    }
+
+    @Test
+    public void canAwardMedalBronze(){
+        team.awardMedal(MedalType.BRONZE);
+        assertEquals(0, team.getMedal().get(MedalType.GOLD));
+        assertEquals(0, team.getMedal().get(MedalType.SILVER));
+        assertEquals(1, team.getMedal().get(MedalType.BRONZE));
     }
 }

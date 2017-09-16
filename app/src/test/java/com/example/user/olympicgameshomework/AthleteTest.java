@@ -34,8 +34,34 @@ public class AthleteTest {
 
     @Test
     public void startsWith0Medals(){
-        assertEquals(0, athlete1.getMedal().get("gold"));
-        assertEquals(0, athlete1.getMedal().get("silver"));
-        assertEquals(0, athlete1.getMedal().get("bronze"));
+        assertEquals(0, athlete1.getMedal().get(MedalType.GOLD));
+        assertEquals(0, athlete1.getMedal().get(MedalType.SILVER));
+        assertEquals(0, athlete1.getMedal().get(MedalType.BRONZE));
+    }
+
+    @Test
+    public void canAwardMedalGold(){
+        athlete1.awardMedal(MedalType.GOLD);
+        athlete1.awardMedal(MedalType.GOLD);
+        assertEquals(2, athlete1.getMedal().get(MedalType.GOLD));
+        assertEquals(0, athlete1.getMedal().get(MedalType.SILVER));
+        assertEquals(0, athlete1.getMedal().get(MedalType.BRONZE));
+
+    }
+
+    @Test
+    public void canAwardMedalSilver(){
+        athlete1.awardMedal(MedalType.SILVER);
+        assertEquals(0, athlete1.getMedal().get(MedalType.GOLD));
+        assertEquals(1, athlete1.getMedal().get(MedalType.SILVER));
+        assertEquals(0, athlete1.getMedal().get(MedalType.BRONZE));
+    }
+
+    @Test
+    public void canAwardMedalBronze(){
+        athlete1.awardMedal(MedalType.BRONZE);
+        assertEquals(0, athlete1.getMedal().get(MedalType.GOLD));
+        assertEquals(0, athlete1.getMedal().get(MedalType.SILVER));
+        assertEquals(1, athlete1.getMedal().get(MedalType.BRONZE));
     }
 }

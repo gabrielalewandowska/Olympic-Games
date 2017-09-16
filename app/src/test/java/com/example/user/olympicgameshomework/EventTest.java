@@ -66,7 +66,7 @@ public class EventTest {
         assertEquals(team1, teamEvent.getCompetitors().get(0));
         assertEquals(team2, teamEvent.getCompetitors().get(1));
     }
-
+//
 //    @Test
 //    public void canAssignScoreToCompetitor(){
 //        athleteEvent.addCompetitor(athlete1);
@@ -74,6 +74,8 @@ public class EventTest {
 //        athleteEvent.addCompetitor(athlete3);
 //        athleteEvent.assignScoreToCompetitors();
 //
+//        assertEquals(1 , athlete1.getScore());
+//        assertEquals(2 , athlete2.getScore());
 //        assertEquals(3 , athlete3.getScore());
 //
 //    }
