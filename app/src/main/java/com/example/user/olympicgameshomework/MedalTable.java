@@ -24,6 +24,26 @@ public class MedalTable {
     public HashMap<Country, HashMap<MedalType, Integer>> getRanking() {
         return ranking;
      }
+
+     public void updateRanking(Country country, MedalType medalType){
+         int currentMedalCount = this.ranking.get(country).get(medalType);
+         this.ranking.get(country).put(medalType, currentMedalCount + 1);
+     }
+
+    public void updateMainMedalTable(Event event){
+        MedalTable eventMedalTable = event.getMedalTable();
+        HashMap<Country, HashMap<MedalType, Integer>> currentMedals = this.ranking;
+
+        for(Country country : Country.values()){
+            event.getMedalTable().getRanking().get(country);
+            for(MedalType medal : MedalType.values()){
+                this.ranking.get(country).put(medal, currentMedals.get(country).get(medal) +
+                eventMedalTable.getRanking().get(country).get(medal) );
+            }
+        }
+    }
+
+
 }
 
 
