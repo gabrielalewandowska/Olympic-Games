@@ -42,6 +42,7 @@ public class MedalTableTest {
 //        event.addCompetitor(athlete3);
 //        event.addCompetitor(athlete4);
 //        event.assignScoreToCompetitors();
+//          event.setCompetitorScore(0, 100)
 //        event.rankCompetitors();
 //        event.awardMedals();
 //        assertEquals(1, event.getMedalTable().getRanking());

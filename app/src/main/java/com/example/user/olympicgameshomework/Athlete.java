@@ -3,7 +3,7 @@ package com.example.user.olympicgameshomework;
 import android.support.annotation.NonNull;
 
 /**
- * Created by user on 15/09/2017.
+ * CreaITted by user on 15/09/2017.
  */
 
 public class Athlete extends Competitor {
